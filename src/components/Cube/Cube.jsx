@@ -2,17 +2,19 @@ import { useState } from 'react';
 import { StyledCube } from './styles';
 
 const Cube = () => {
-	const [state, setState] = useState('red');
+	const [isGreen, setIsGreen] = useState(true);
 
-	const changeColor = () => {
-		setState(state === 'green' ? 'red' : 'green');
-	};
 	return (
 		<>
-			<StyledCube color='green'></StyledCube>
-			<button onClick={changeColor}>Change Color</button>
+			<StyledCube isGreen={isGreen}></StyledCube>
+			<button onClick={() => changeColor(isGreen, setIsGreen)}>
+				Change Color
+			</button>
 		</>
 	);
+};
+const changeColor = (isGreen, setIsGreen) => {
+	setIsGreen(!isGreen);
 };
 
 export default Cube;
