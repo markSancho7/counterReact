@@ -22,7 +22,7 @@ const Counter = () => {
 				></CounterComponent>
 				<CounterComponent
 					info='Restart'
-					action={() => restart(counter, setCounter)}
+					action={() => restart( setCounter)}
 				></CounterComponent>
 			</div>
 		</>
@@ -34,7 +34,7 @@ const increment = (counter, setCounter) => {
 const decrement = (counter, setCounter) => {
 	setCounter(counter - 1);
 };
-const restart = (counter, setCounter) => {
+const restart = (setCounter) => {
 	setCounter(0);
 };
 
